@@ -1,26 +1,55 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+	<h2>我是App组件</h2>
+	<h3>个人信息</h3>
+	<div>姓名：{{name}}</div>
+	<div>年龄{{age}}</div>
+	<button @click="say">说话</button>
+	<!-- <HelloWorld></HelloWorld> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import { h } from '@vue/runtime-core'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+	name: 'App',
+	components: {
+		// HelloWorld
+	},
+	/* 测试setup函数，不考虑响应式 */
+	setup() {
+		/* 数据 */
+		let name = '张三'
+		let age = 18
+
+		/* 方法 */
+		function say() {
+			alert(`大家好，我是${name},今年${age}岁了`)
+		}
+
+		/* return一个对象（常用） */
+		return {
+			name,
+			age,
+			say
+		}
+
+		// return一个渲染函数
+		// return () => h('h1', 'HelloWorld')
+	}
+
+	/* 注意点 */
 }
 </script>
 
+
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	margin-top: 60px;
 }
 </style>
