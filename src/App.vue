@@ -39,6 +39,11 @@ export default {
 	}
 
 	/* 注意点 */
+	// 1、尽量还要与vue2配置混用
+	//  1.1 vue2配置（data，methods，computed）中可以访问到setup中的属性、方法
+	//  1.2 setup中不能访问到vue2的配置
+	//  1.3 属性如果有重名，setup优先
+	// 2、setup不能是一个async函数，因为返回值不再是return的对象，而是promise，模板看不到return对象中的属性
 }
 </script>
 
