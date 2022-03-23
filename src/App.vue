@@ -4,17 +4,18 @@
 	<div>姓名：{{name}}</div>
 	<div>年龄{{age}}</div>
 	<button @click="say">说话</button>
-	<!-- <HelloWorld></HelloWorld> -->
+	<hr>
+	<RefFunction></RefFunction>
 </template>
 
 <script>
 // import { h } from '@vue/runtime-core'
-// import HelloWorld from './components/HelloWorld.vue'
+import RefFunction from './02ref/ref_function.vue'
 
 export default {
 	name: 'App',
 	components: {
-		// HelloWorld
+		RefFunction
 	},
 	/* 测试setup函数，不考虑响应式 */
 	setup() {
