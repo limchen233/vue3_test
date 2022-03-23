@@ -6,16 +6,19 @@
 	<button @click="say">说话</button>
 	<hr>
 	<RefFunction></RefFunction>
+	<hr>
+	<TestReactive></TestReactive>
 </template>
 
 <script>
 // import { h } from '@vue/runtime-core'
 import RefFunction from './02ref/ref_function.vue'
+import TestReactive from './02ref/test_reactive.vue'
 
 export default {
 	name: 'App',
 	components: {
-		RefFunction
+		RefFunction, TestReactive
 	},
 	/* 测试setup函数，不考虑响应式 */
 	setup() {

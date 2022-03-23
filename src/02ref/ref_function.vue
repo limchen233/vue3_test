@@ -33,7 +33,7 @@ export default {
 			age.value = 20
 			console.log(name, age)
 
-			// 引用类型
+			// 引用类型（ref函数借助了reactive函数）
 			job.value.job_name = 'UI设计师'
 			console.log(job.value)
 		}
