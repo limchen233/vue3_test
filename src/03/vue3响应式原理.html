@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 源数据
+			let person = {
+				name: '张三',
+				age: 18
+			}
+
+			// 模拟vue2的响应式
+			/* let p = {}
+			Object.defineProperty(p, 'name', {
+				// 读取
+				get() {
+					console.log('有人访问了name属性')
+					return person.name
+				},
+
+				// 修改
+				set(val) {
+					person.name = val
+					console.log('有人修改了name属性')
+				}
+			})
+
+			Object.defineProperty(p, 'age', {
+				// 读取
+				get() {
+					console.log('有人访问了age属性')
+					return person.age
+				},
+
+				// 修改
+				set(val) {
+					person.age = val
+					console.log('有人修改了age属性')
+				}
+			}) */
+
+			// 模拟vue3中的响应式
+			const p = new Proxy(person, {
+				// 读取
+				get(target, propName) {
+					console.log(`有人读取了p身上的${propName}属性`)
+					return target[propName]
+				},
+
+				// 修改和增加
+				set(target, propName, value) {
+					target[propName] = value
+					console.log(`有人修改了p身上的${propName}属性`)
+				},
+
+				// 删除
+				deleteProperty(target, propName) {
+					console.log(`有人删除了p身上的${propName}属性`)
+					return delete target[propName]
+				}
+			})
+		</script>
+	</body>
+</html>
