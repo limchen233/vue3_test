@@ -14,6 +14,11 @@
 				age: 18
 			}
 
+			let person1 = {
+				name: '张三',
+				age: 18
+			}
+
 			// 模拟vue2的响应式
 			/* let p = {}
 			Object.defineProperty(p, 'name', {
@@ -62,6 +67,28 @@
 				deleteProperty(target, propName) {
 					console.log(`有人删除了p身上的${propName}属性`)
 					return delete target[propName]
+				}
+			})
+
+			// vue3中实际的响应式实现方式是通过reflect
+
+			const p1 = new Proxy(person1, {
+				// 读取
+				get(target, propName) {
+					console.log(`有人读取了p1身上的${propName}属性`)
+					return Reflect.get(target, propName)
+				},
+
+				// 修改和增加
+				set(target, propName, value) {
+					Reflect.set(target, propName, value)
+					console.log(`有人修改了p1身上的${propName}属性`)
+				},
+
+				// 删除
+				deleteProperty(target, propName) {
+					console.log(`有人删除了p1身上的${propName}属性`)
+					return Reflect.defineProperty(target, propName)
 				}
 			})
 		</script>
