@@ -10,6 +10,8 @@
 	<TestReactive></TestReactive>
 	<hr>
 	<ReactiveMd></ReactiveMd>
+	<hr>
+	<SetupDemo></SetupDemo>
 
 </template>
 
@@ -18,11 +20,12 @@
 import RefFunction from './02ref/ref_function.vue'
 import TestReactive from './02ref/test_reactive.vue'
 import ReactiveMd from './03/reactive_md.vue'
+import SetupDemo from './04setup注意点/setup_demo.vue'
 
 export default {
 	name: 'App',
 	components: {
-		RefFunction, TestReactive, ReactiveMd
+		RefFunction, TestReactive, ReactiveMd, SetupDemo
 	},
 	/* 测试setup函数，不考虑响应式 */
 	setup() {
