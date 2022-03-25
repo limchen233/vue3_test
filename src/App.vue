@@ -11,7 +11,7 @@
 	<hr>
 	<ReactiveMd></ReactiveMd>
 	<hr>
-	<SetupDemo></SetupDemo>
+	<SetupDemo @hello="testHello" msg="hello" name="张三"></SetupDemo>
 
 </template>
 
@@ -38,11 +38,16 @@ export default {
 			alert(`大家好，我是${name},今年${age}岁了`)
 		}
 
+		function testHello(val) {
+			alert(val)
+		}
+
 		/* return一个对象（常用） */
 		return {
 			name,
 			age,
-			say
+			say,
+			testHello
 		}
 
 		// return一个渲染函数
