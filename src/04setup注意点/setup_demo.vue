@@ -32,7 +32,12 @@ export default {
 	/* 注意：
 		1、setup早于beforeCreate执行
 		2、setup中this是undefined
-		3、setup接收两个参数，props要先声明才能接收到值
+		3、setup接收两个参数，默认是props和context；
+			 props要先声明才能接收到值，值是Proxy对象。
+			 context：上下文对象
+					attrs：值为对象相当于this.$attrs
+					slots：收到的插槽内容，相当于this.$slots
+					emit：分发自定义事件的函数，相当于this.$emit
 	
 	
 	*/
