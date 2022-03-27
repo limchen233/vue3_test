@@ -12,6 +12,8 @@
 	<ReactiveMd></ReactiveMd>
 	<hr>
 	<SetupDemo @hello="testHello" msg="hello" name="张三"></SetupDemo>
+	<hr>
+	<ComputedDemo></ComputedDemo>
 
 </template>
 
@@ -19,13 +21,14 @@
 // import { h } from '@vue/runtime-core'
 import RefFunction from './02ref/ref_function.vue'
 import TestReactive from './02ref/test_reactive.vue'
-import ReactiveMd from './03/reactive_md.vue'
+import ReactiveMd from './03响应式原理/reactive_md.vue'
 import SetupDemo from './04setup注意点/setup_demo.vue'
+import ComputedDemo from './05vue3计算属性/ComputedDemo.vue'
 
 export default {
 	name: 'App',
 	components: {
-		RefFunction, TestReactive, ReactiveMd, SetupDemo
+		RefFunction, TestReactive, ReactiveMd, SetupDemo, ComputedDemo
 	},
 	/* 测试setup函数，不考虑响应式 */
 	setup() {
