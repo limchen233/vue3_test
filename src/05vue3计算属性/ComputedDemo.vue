@@ -4,7 +4,7 @@
 	<br>
 	名：<input type="text" v-model="person.lastname">
 	<br>
-	<span>全名：{{fullname}}</span>
+	<span>全名：{{person.fullname}}</span>
 </template>
 <script>
 import { reactive, computed } from 'vue'
@@ -18,14 +18,19 @@ export default {
 		})
 
 		// 计算属性
-		let fullname = computed(() => {
+		// let fullname = computed(() => {
+		// 	return person.firstname + person.lastname
+		// })
+
+		// 直接在对象上追加属性
+		person.fullname = computed(() => {
 			return person.firstname + person.lastname
 		})
 
 		// 返回数据
 		return {
 			person,
-			fullname
+			// fullname
 		}
 
 	}
