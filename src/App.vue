@@ -16,6 +16,9 @@
 	<ComputedDemo></ComputedDemo>
 	<hr>
 	<WatchDemo></WatchDemo>
+	<hr>
+	<h2>watchEffect函数</h2>
+	<Demo></Demo>
 </template>
 
 <script>
@@ -26,11 +29,12 @@ import ReactiveMd from './03响应式原理/reactive_md.vue'
 import SetupDemo from './04setup注意点/setup_demo.vue'
 import ComputedDemo from './05vue3计算属性/ComputedDemo.vue'
 import WatchDemo from './06watch/WatchDemo.vue'
+import Demo from './07watchEffect函数/Demo.vue'
 
 export default {
 	name: 'App',
 	components: {
-		RefFunction, TestReactive, ReactiveMd, SetupDemo, ComputedDemo, WatchDemo
+		RefFunction, TestReactive, ReactiveMd, SetupDemo, ComputedDemo, WatchDemo, Demo
 	},
 	/* 测试setup函数，不考虑响应式 */
 	setup() {
