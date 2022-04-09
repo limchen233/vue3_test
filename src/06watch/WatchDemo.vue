@@ -4,10 +4,10 @@
 	<h3>当前信息为：{{msg}}</h3>
 	<button @click="msg+='!'">修改信息</button>
 	<h3>个人信息</h3>
-	<h2>姓名：{{person.name}}</h2>
-	<h2>年龄：{{person.age}}</h2>
-	<button @click="person.name+='~'">修改姓名</button>
-	<button @click="person.age++">修改年龄</button>
+	<h2>姓名：{{person1.name}}</h2>
+	<h2>年龄：{{person1.age}}</h2>
+	<button @click="person1.name+='~'">修改姓名</button>
+	<button @click="person1.age++">修改年龄</button>
 </template>
 <script>
 import { reactive, ref } from '@vue/reactivity'
@@ -64,23 +64,35 @@ export default {
 
 		// 情况四：监听reactive定义的对象的某个属性
 		// 不能直接写person.age,要写成函数的形式
-		watch(() => person.age, (newValue, oldValue) => {
+		/* watch(() => person.age, (newValue, oldValue) => {
 			console.log('person的age改变了', newValue, oldValue)
-		})
+		}) */
 
 		// 情况五：监听reactive定义的对象的多个属性，用数组包裹
-		watch([() => person.name, () => person.age], (newValue, oldValue) => {
+		/* watch([() => person.name, () => person.age], (newValue, oldValue) => {
 			console.log('person的name或age改变了', newValue, oldValue)
+		}) */
+
+
+		// 用ref定义响应式数据
+		let person1 = ref({
+			name: '张三',
+			age: 18
 		})
+		// 要开启deep或属性加value(person1.value是ref借助reactive生成的proxy对象)
+		/* watch(person1, (newValue, oldValue) => {
+			console.log('person1', newValue, oldValue)
+		}, { deep: true })*/
 
-
-
+		watch(person1.value, (newValue, oldValue) => {
+			console.log('person1', newValue, oldValue)
+		})
 
 
 
 		// 返回一个对象
 		return {
-			sum, msg, person
+			sum, msg, person, person1
 		}
 	}
 }
