@@ -14,7 +14,8 @@
 	<SetupDemo @hello="testHello" msg="hello" name="张三"></SetupDemo>
 	<hr>
 	<ComputedDemo></ComputedDemo>
-
+	<hr>
+	<WatchDemo></WatchDemo>
 </template>
 
 <script>
@@ -24,11 +25,12 @@ import TestReactive from './02ref/test_reactive.vue'
 import ReactiveMd from './03响应式原理/reactive_md.vue'
 import SetupDemo from './04setup注意点/setup_demo.vue'
 import ComputedDemo from './05vue3计算属性/ComputedDemo.vue'
+import WatchDemo from './06watch/WatchDemo.vue'
 
 export default {
 	name: 'App',
 	components: {
-		RefFunction, TestReactive, ReactiveMd, SetupDemo, ComputedDemo
+		RefFunction, TestReactive, ReactiveMd, SetupDemo, ComputedDemo, WatchDemo
 	},
 	/* 测试setup函数，不考虑响应式 */
 	setup() {
