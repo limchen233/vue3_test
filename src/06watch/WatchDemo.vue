@@ -40,12 +40,12 @@ export default {
 			console.log('msg改变了', newValue, oldValue)
 		}) */
 
-		// 推荐写法，用数组包裹
+		// 推荐写法，用数组包裹,此时newValue和oldValue的值为数组
 		watch([sum, msg], (newValue, oldValue) => {
 			console.log('sum或msg改变了', newValue, oldValue)
 		}, { immediate: true })
 
-		/* 情况三：监听ref所定义的多个响应式数据
+		/* 情况三：监听reactive所定义的响应式对象数据
 			 问题：1、此处无法正确获取oldValue
 						2、强制开启了深度监视（deep配置无效）
 						3、特殊情况，如果监听的是reactive定义的对象中的属性
@@ -79,11 +79,12 @@ export default {
 			name: '张三',
 			age: 18
 		})
-		// 要开启deep或属性加value(person1.value是ref借助reactive生成的proxy对象)
+		// 要开启deep才能触发
 		/* watch(person1, (newValue, oldValue) => {
 			console.log('person1', newValue, oldValue)
 		}, { deep: true })*/
 
+		// 或对象加value属性(person1.value是ref借助reactive生成的proxy对象--value:{name:'张三',age:18})
 		watch(person1.value, (newValue, oldValue) => {
 			console.log('person1', newValue, oldValue)
 		})
