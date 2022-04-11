@@ -19,6 +19,9 @@
 	<hr>
 	<h2>watchEffect函数</h2>
 	<Demo></Demo>
+	<hr>
+	<h2>roRef与toRefs</h2>
+	<RefDemo></RefDemo>
 </template>
 
 <script>
@@ -30,11 +33,12 @@ import SetupDemo from './04setup注意点/setup_demo.vue'
 import ComputedDemo from './05vue3计算属性/ComputedDemo.vue'
 import WatchDemo from './06watch/WatchDemo.vue'
 import Demo from './07watchEffect函数/Demo.vue'
+import RefDemo from './09roRef与toRefs/Demo.vue'
 
 export default {
 	name: 'App',
 	components: {
-		RefFunction, TestReactive, ReactiveMd, SetupDemo, ComputedDemo, WatchDemo, Demo
+		RefFunction, TestReactive, ReactiveMd, SetupDemo, ComputedDemo, WatchDemo, Demo, RefDemo
 	},
 	/* 测试setup函数，不考虑响应式 */
 	setup() {
