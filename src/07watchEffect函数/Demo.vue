@@ -34,7 +34,8 @@ export default ({
 		})
 
 		/* 
-			watchEffect不用指定监听哪个属性，监听回调中用到哪个属性，就监听哪个属性
+			1.watchEffect不用指定监听哪个属性，监听回调中用到哪个属性，就监听哪个属性
+			2.watchEffect默认开启了immediate,会先执行一次
 		*/
 		watchEffect(() => {
 			const a = sum.value
