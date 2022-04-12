@@ -35,7 +35,7 @@
 	<h3>{{keyword}}</h3>
 </template>
 
-```vue
+```
 <script>
 	import {ref,customRef} from 'vue'
 	export default {
@@ -68,4 +68,8 @@
 			}
 		}
 	}
-</script>```
+</script>
+```
+
+
+
