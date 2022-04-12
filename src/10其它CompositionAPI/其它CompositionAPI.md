@@ -30,12 +30,14 @@
 
 - 作用：创建一个自定义的 ref，并对其依赖项跟踪和更新触发进行显式控制。
 - 实现防抖效果：
+
+```
 <template>
 	<input type="text" v-model="keyword">
 	<h3>{{keyword}}</h3>
 </template>
 
-```
+
 <script>
 	import {ref,customRef} from 'vue'
 	export default {
